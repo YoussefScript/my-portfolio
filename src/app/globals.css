@@ -1,26 +1,65 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+/* ──────────────────────────────────────────────
+   Global Overrides
+────────────────────────────────────────────── */
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #000;
+  color: #fff;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ──────────────────────────────────────────────
+   Scrollbar
+────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #0a0a0a; }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #3b82f6, #8b5cf6);
+  border-radius: 4px;
+}
+
+/* ──────────────────────────────────────────────
+   Utilities
+────────────────────────────────────────────── */
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ──────────────────────────────────────────────
+   Theme gradient tokens — used as inline styles
+   via CSS vars set on the page wrapper.
+   All gradient classes are declared statically
+   here so Tailwind's scanner finds them.
+────────────────────────────────────────────── */
+
+/* Theme 0 */
+.theme-gradient-primary-0   { background-image: linear-gradient(to right, #60a5fa, #3b82f6, #6366f1); }
+.theme-gradient-secondary-0 { background-image: linear-gradient(to right, #22d3ee, #60a5fa, #3b82f6); }
+.theme-gradient-accent-0    { background-image: linear-gradient(to right, #c084fc, #a855f7, #ec4899); }
+/* Theme 1 */
+.theme-gradient-primary-1   { background-image: linear-gradient(to right, #22c55e, #0d9488); }
+.theme-gradient-secondary-1 { background-image: linear-gradient(to right, #34d399, #22c55e); }
+.theme-gradient-accent-1    { background-image: linear-gradient(to right, #2dd4bf, #06b6d4); }
+/* Theme 2 */
+.theme-gradient-primary-2   { background-image: linear-gradient(to right, #f97316, #dc2626); }
+.theme-gradient-secondary-2 { background-image: linear-gradient(to right, #facc15, #f97316); }
+.theme-gradient-accent-2    { background-image: linear-gradient(to right, #f87171, #ec4899); }
+/* Theme 3 */
+.theme-gradient-primary-3   { background-image: linear-gradient(to right, #8b5cf6, #9333ea); }
+.theme-gradient-secondary-3 { background-image: linear-gradient(to right, #818cf8, #8b5cf6); }
+.theme-gradient-accent-3    { background-image: linear-gradient(to right, #c084fc, #ec4899); }
+/* Theme 4 */
+.theme-gradient-primary-4   { background-image: linear-gradient(to right, #f43f5e, #db2777); }
+.theme-gradient-secondary-4 { background-image: linear-gradient(to right, #f472b6, #f43f5e); }
+.theme-gradient-accent-4    { background-image: linear-gradient(to right, #e879f9, #ec4899); }
