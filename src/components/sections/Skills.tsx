@@ -18,22 +18,29 @@ import {
 import { FaReact, FaGitAlt } from "react-icons/fa";
 import { useTheme } from "@/context/ThemeContext";
 
-const SKILLS = [
-  { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
-  { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E" },
-  { name: "React", icon: FaReact, color: "#61DAFB" },
-  { name: "Next.js", icon: SiNextdotjs, color: "#ffffff" },
-  { name: "Tailwind CSS", icon: SiTailwindcss, color: "#38BDF8" },
-  { name: "Shadcn UI", icon: SiShadcnui, color: "#ffffff" },
-  { name: "Sass", icon: SiSass, color: "#CC6699" },
-  { name: "HTML", icon: SiHtml5, color: "#E34F26" },
-  { name: "CSS", icon: SiCss, color: "#1572B6" },
-  { name: "TanStack Query", icon: SiReactquery, color: "#FF4154" },
-  { name: "Zod", icon: SiZod, color: "#3068B7" },
-  { name: "Axios", icon: SiAxios, color: "#5A29E4" },
-  { name: "Zustand", icon: FaReact, color: "#ebaf19" },
-  { name: "Clerk", icon: SiClerk, color: "#6C47FF" },
-  { name: "Git", icon: FaGitAlt, color: "#F05032" },
+interface Skill {
+  name: string;
+  icon: any;
+  color: string;
+  level: number;
+}
+
+const SKILLS: Skill[] = [
+  { name: "TypeScript", icon: SiTypescript, color: "#3178C6", level: 100 },
+  { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E", level: 100 },
+  { name: "React", icon: FaReact, color: "#61DAFB", level: 100 },
+  { name: "Next.js", icon: SiNextdotjs, color: "#ffffff", level: 100 },
+  { name: "Tailwind CSS", icon: SiTailwindcss, color: "#38BDF8", level: 100 },
+  { name: "Shadcn UI", icon: SiShadcnui, color: "#ffffff", level: 100 },
+  { name: "Clerk", icon: SiClerk, color: "#6C47FF", level: 100 },
+  { name: "Zustand", icon: FaReact, color: "#ebaf19", level: 100 },
+  { name: "TanStack Query", icon: SiReactquery, color: "#FF4154", level: 100 },
+  { name: "Zod", icon: SiZod, color: "#3068B7", level: 100 },
+  { name: "Axios", icon: SiAxios, color: "#5A29E4", level: 100 },
+  { name: "Sass", icon: SiSass, color: "#CC6699", level: 100 },
+  { name: "HTML", icon: SiHtml5, color: "#E34F26", level: 100 },
+  { name: "CSS", icon: SiCss, color: "#1572B6", level: 100 },
+  { name: "Git", icon: FaGitAlt, color: "#F05032", level: 100 },
 ];
 
 export default function Skills() {

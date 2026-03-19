@@ -8,10 +8,10 @@ export default function About() {
   const theme = useTheme();
 
   const stats = [
-    { label: "Technologies", value: "10+", icon: "🛠️" },
+    { label: "Technologies", value: "15+", icon: "🛠️" },
     { label: "Projects", value: "4", icon: "🚀" },
-    { label: "Experience Years", value: "2+", icon: "⚡" },
-    { label: "Coffee Cups", value: "∞", icon: "☕" },
+    { label: "Experience Years", value: "2+", icon: "⏳" },
+    { label: "Lines of Code", value: "♾️", icon: "</>" },
   ];
 
   return (
@@ -109,6 +109,7 @@ export default function About() {
                 src="/pro.jpg"
                 alt="Profile"
                 fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
                 className="object-cover transition-transform duration-700 group-hover:scale-110"
                 priority
               />
