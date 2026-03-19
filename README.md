@@ -1,8 +1,7 @@
 # Youssef Emad Kamel - Modern Full-Stack Portfolio 🚀
+https://youssef-script-dev.vercel.app
 
 A high-performance, visually stunning portfolio website built with the latest technologies. This project showcases a luxury aesthetic with glassmorphism, fluid animations, and a professional user experience.
-
-![Portfolio Preview](public/sassLandingpage.png)
 
 ## ✨ Features
 
