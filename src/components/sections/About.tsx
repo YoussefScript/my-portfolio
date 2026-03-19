@@ -3,15 +3,17 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useTheme } from "@/context/ThemeContext";
+import { Infinity as InfinityIcon } from "lucide-react";
+import { type ReactNode } from "react";
 
 export default function About() {
   const theme = useTheme();
 
-  const stats = [
+  const stats: { label: string; value: ReactNode; icon: string }[] = [
     { label: "Technologies", value: "15+", icon: "🛠️" },
     { label: "Projects", value: "4", icon: "🚀" },
     { label: "Experience Years", value: "2+", icon: "⏳" },
-    { label: "Lines of Code", value: "♾️", icon: "</>" },
+    { label: "Lines of Code", value: <InfinityIcon className="w-6 h-6" />, icon: "</>" },
   ];
 
   return (
@@ -78,10 +80,20 @@ export default function About() {
                     {stat.icon}
                   </div>
                   <div>
-                    <p className="text-2xl font-bold bg-clip-text text-transparent"
-                      style={{ backgroundImage: theme.secondaryText }}>
-                      {stat.value}
-                    </p>
+                    <div className="text-2xl font-bold">
+                      {typeof stat.value === "string" ? (
+                        <span
+                          className="bg-clip-text text-transparent"
+                          style={{ backgroundImage: theme.secondaryText }}
+                        >
+                          {stat.value}
+                        </span>
+                      ) : (
+                        <span className="text-white flex items-center">
+                          {stat.value}
+                        </span>
+                      )}
+                    </div>
                     <p className="text-xs text-gray-500 uppercase tracking-wider font-semibold">{stat.label}</p>
                   </div>
                 </motion.div>
