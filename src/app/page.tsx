@@ -46,7 +46,7 @@ function PageContent() {
                 className="text-xl font-bold bg-clip-text text-transparent group-hover:scale-105 transition-transform duration-300 inline-block"
                 style={{ backgroundImage: theme.secondaryText }}
               >
-                Youssef Emad Kamel
+                Emad Kamel Ayad
               </span>
               <span className="text-xs text-gray-400 font-medium">Frontend Developer</span>
             </div>
