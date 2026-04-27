@@ -1,4 +1,4 @@
-# Emad Kamel Ayad - Modern Full-Stack Portfolio 🚀
+# Youssef Emad Kamel - Portfolio 🚀
 
 A high-performance, visually stunning portfolio website built with the latest technologies. This project showcases a luxury aesthetic with glassmorphism, fluid animations, and a professional user experience.
 

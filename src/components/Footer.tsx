@@ -81,7 +81,7 @@ export default function Footer() {
             viewport={{ once: true }}
             className="text-center"
           >
-            <p className="text-gray-400 text-sm md:text-base">© 2026 Developed by Emad Kamel Ayad.</p>
+            <p className="text-gray-400 text-sm md:text-base">© 2026 Developed by Youssef Emad Kamel.</p>
             <p className="text-gray-500 text-xs md:text-sm mt-1">Crafted with ❤️ and code</p>
           </motion.div>
         </div>
