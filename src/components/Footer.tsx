@@ -36,7 +36,7 @@ export default function Footer() {
             <div className="flex flex-col">
               <span className="text-xl md:text-2xl font-bold bg-clip-text text-transparent"
                 style={{ backgroundImage: theme.secondaryText }}>
-                Emad Kamel Ayad
+                Youssef Emad Kamel
               </span>
               <span className="text-xs md:text-sm text-gray-400 font-medium">Frontend Developer</span>
             </div>
