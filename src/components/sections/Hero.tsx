@@ -13,7 +13,7 @@ export default function Hero() {
 
   const socials = [
     { icon: FaGithub, href: "https://github.com/YoussefScript", color: "#9ca3af", hoverColor: "#d1d5db" },
-    { icon: FaWhatsapp, href: "https://wa.me/201111225642", color: "#9ca3af", hoverColor: "#25d366" },
+    { icon: FaWhatsapp, href: "https://wa.me/201553356036", color: "#9ca3af", hoverColor: "#25d366" },
     { icon: FaEnvelope, href: "mailto:youssef1362009kamel@gmail.com", color: "#9ca3af", hoverColor: "#4ade80" },
   ];
 
