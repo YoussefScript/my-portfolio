@@ -15,8 +15,8 @@ const CONTACT_INFO = [
   {
     icon: FaWhatsapp,
     label: "WhatsApp",
-    value: "+20 1111225642",
-    href: "https://wa.me/201111225642",
+    value: "+20 1553356036",
+    href: "https://wa.me/201553356036",
   },
   {
     icon: FaGithub,
