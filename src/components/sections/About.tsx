@@ -11,8 +11,8 @@ export default function About() {
 
   const stats: { label: string; value: ReactNode; icon: string }[] = [
     { label: "Technologies", value: "15+", icon: "🛠️" },
-    { label: "Projects", value: "4", icon: "🚀" },
-    { label: "Experience Years", value: "2+", icon: "⏳" },
+    { label: "Projects", value: <InfinityIcon className="w-6 h-6" />, icon: "🚀" },
+    { label: "Experience Years", value: "3+", icon: "⏳" },
     { label: "Lines of Code", value: <InfinityIcon className="w-6 h-6" />, icon: "</>" },
   ];
 
