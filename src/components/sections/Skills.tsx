@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import {
   SiNextdotjs,
   SiTypescript,
@@ -12,6 +11,7 @@ import {
   SiShadcnui,
   SiClerk,
   SiRedux,
+  SiAxios,
   SiZod,
 } from "react-icons/si";
 import { FaReact, FaGitAlt } from "react-icons/fa";
@@ -34,6 +34,7 @@ const SKILLS: Skill[] = [
   { name: "Clerk", icon: SiClerk, color: "#6C47FF", level: 100 },
   { name: "Redux Toolkit", icon: SiRedux, color: "#764ABC", level: 100 },
   { name: "RTK Query", icon: SiRedux, color: "#764ABC", level: 100 },
+  { name: "Axios", icon: SiAxios, color: "#5A29E4", level: 100 },
   { name: "Zod", icon: SiZod, color: "#3068B7", level: 100 },
   { name: "Sass", icon: SiSass, color: "#CC6699", level: 100 },
   { name: "HTML", icon: SiHtml5, color: "#E34F26", level: 100 },
