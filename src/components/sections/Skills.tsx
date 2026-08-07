@@ -1,5 +1,7 @@
 "use client";
 
+import { motion } from "framer-motion";
+
 import {
   SiNextdotjs,
   SiTypescript,
@@ -14,6 +16,7 @@ import {
   SiAxios,
   SiZod,
 } from "react-icons/si";
+
 import { FaReact, FaGitAlt } from "react-icons/fa";
 import { useTheme } from "@/context/ThemeContext";
 
@@ -46,11 +49,8 @@ export default function Skills() {
   const theme = useTheme();
 
   return (
-    <section
-      id="skills"
-      className="py-24 px-6 relative overflow-hidden"
-    >
-      <div className="max-w-7xl mx-auto relative z-10">
+    <section id="skills" className="relative py-24 overflow-hidden">
+      <div className="container mx-auto px-6 relative z-10">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -65,7 +65,7 @@ export default function Skills() {
           >
             Skills & Technologies
           </h2>
-
+  
           <motion.div
             className="h-1.5 mx-auto rounded-full mb-6"
             style={{ backgroundImage: theme.secondary }}
@@ -74,7 +74,7 @@ export default function Skills() {
             transition={{ duration: 1, delay: 0.2 }}
             viewport={{ once: true }}
           />
-
+  
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
             My technical{" "}
             <span
@@ -86,12 +86,12 @@ export default function Skills() {
             and expertise
           </p>
         </motion.div>
-
+  
         {/* Skills Grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
           {SKILLS.map((skill, i) => {
             const Icon = skill.icon;
-
+  
             return (
               <motion.div
                 key={skill.name}
@@ -107,7 +107,7 @@ export default function Skills() {
                   className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-10 blur-xl transition-opacity duration-300"
                   style={{ backgroundColor: skill.color }}
                 />
-
+  
                 <div className="relative z-10 flex flex-col items-center w-full">
                   <div
                     className="w-16 h-16 rounded-xl flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110"
@@ -118,11 +118,11 @@ export default function Skills() {
                       style={{ color: skill.color }}
                     />
                   </div>
-
+  
                   <h3 className="text-white font-bold text-center tracking-tight">
                     {skill.name}
                   </h3>
-
+  
                   {/* Progress Bar */}
                   <div className="w-full h-1.5 bg-white/10 rounded-full mt-4 overflow-hidden">
                     <motion.div
@@ -142,18 +142,17 @@ export default function Skills() {
             );
           })}
         </div>
-
+  
         {/* Decorative Blobs */}
         <div
           className="absolute top-1/2 left-0 -translate-y-1/2 w-64 h-64 blur-[120px] opacity-20 pointer-events-none"
           style={{ backgroundImage: theme.primary }}
         />
-
+  
         <div
           className="absolute top-1/2 right-0 -translate-y-1/2 w-64 h-64 blur-[120px] opacity-20 pointer-events-none"
           style={{ backgroundImage: theme.secondary }}
         />
       </div>
     </section>
-  );
-}
+  );}
