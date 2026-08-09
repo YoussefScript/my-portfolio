@@ -14,6 +14,7 @@ import {
   SiClerk,
   SiRedux,
   SiAxios,
+  SiGithub,
   SiZod,
 } from "react-icons/si";
 
@@ -37,12 +38,12 @@ const SKILLS: Skill[] = [
   { name: "Clerk", icon: SiClerk, color: "#6C47FF", level: 100 },
   { name: "Redux Toolkit", icon: SiRedux, color: "#764ABC", level: 100 },
   { name: "RTK Query", icon: SiRedux, color: "#764ABC", level: 100 },
-  { name: "Axios", icon: SiAxios, color: "#5A29E4", level: 100 },
   { name: "Zod", icon: SiZod, color: "#3068B7", level: 100 },
   { name: "Sass", icon: SiSass, color: "#CC6699", level: 100 },
   { name: "HTML", icon: SiHtml5, color: "#E34F26", level: 100 },
   { name: "CSS", icon: SiCss, color: "#1572B6", level: 100 },
   { name: "Git", icon: FaGitAlt, color: "#F05032", level: 100 },
+  { name: "GitHub", icon: SiGithub, color: "#ffffff", level: 100 },
 ];
 
 export default function Skills() {
