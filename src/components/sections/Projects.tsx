@@ -36,14 +36,6 @@ const PROJECTS = [
     githubLink: "https://github.com/YoussefScript/ecommerce-store",
     liveLink: "https://ecommerce-store-psi-rust.vercel.app",
   },
-  {
-    title: "Online tech store",
-    description: "A modern e-commerce storefront built with React and Vite, designed to deliver a smooth shopping experience with product browsing, category navigation, search, favorites, and cart interactions.",
-    emoji: "👗",
-    tech: ["React.js 19", "CSS3", "Vite"],
-    githubLink: "https://github.com/YoussefScript/ecommerce-front-end-react",
-    liveLink: "https://ecommerce-react-nine-sooty.vercel.app",
-  },
 ];
 
 export default function Projects() {
