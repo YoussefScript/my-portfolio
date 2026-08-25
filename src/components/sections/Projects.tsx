@@ -1,4 +1,5 @@
 "use client";
+
 import { motion } from "framer-motion";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import { useTheme } from "@/context/ThemeContext";
@@ -6,7 +7,9 @@ import { useTheme } from "@/context/ThemeContext";
 const PROJECTS = [
   {
     title: "SaaS Landing Page",
-    description: "A high-conversion SaaS landing page with RTL support and dark mode. Built with Next.js and Tailwind for maximum performance and responsiveness.",
+    category: "Frontend",
+    description:
+      "A high-conversion SaaS landing page with RTL support and dark mode. Built with Next.js and Tailwind for maximum performance and responsiveness.",
     emoji: "🚀",
     tech: ["Next.js", "TypeScript", "Tailwind CSS"],
     githubLink: "https://github.com/YoussefScript/landing-page",
@@ -14,7 +17,9 @@ const PROJECTS = [
   },
   {
     title: "SkyCast Weather Dashboard",
-    description: "A premium weather application with interactive maps and real-time geocoding. Features a stunning glassmorphic UI and multi-layered solar details.",
+    category: "Frontend",
+    description:
+      "A premium weather application with interactive maps and real-time geocoding. Features a stunning glassmorphic UI and multi-layered solar details.",
     emoji: "🌤️",
     tech: ["React 19", "Tailwind 4", "Zod", "Vite"],
     githubLink: "https://github.com/YoussefScript/Weather-React-DashBoard",
@@ -22,17 +27,37 @@ const PROJECTS = [
   },
   {
     title: "E-Commerce Admin Dashboard",
-    description: "A professional, high-performance admin dashboard designed to manage multiple stores, products, and analytics with ease. Features Stripe payments and Clerk authentication.",
+    category: "Full Stack",
+    description:
+      "A professional, high-performance admin dashboard designed to manage multiple stores, products, and analytics with ease. Features Stripe payments and Clerk authentication.",
     emoji: "🛍️",
-    tech: ["Next.js 16", "Tailwind 4","Prisma", "zod", "Zustand", "Clerk", "Stripe"],
+    tech: [
+      "Next.js 16",
+      "Tailwind 4",
+      "Prisma",
+      "zod",
+      "Zustand",
+      "Clerk",
+      "Stripe",
+    ],
     githubLink: "https://github.com/YoussefScript/ecommerce-admin",
     liveLink: "https://ecommerce-admin-inky-alpha.vercel.app",
   },
   {
     title: "E-Commerce Store",
-    description: "A luxury e-commerce storefront with a cinematic UI and smooth micro-interactions. Features a persistent cart via Zustand and a secure Stripe checkout flow.",
+    category: "Full Stack",
+    description:
+      "A luxury e-commerce storefront with a cinematic UI and smooth micro-interactions. Features a persistent cart via Zustand and a secure Stripe checkout flow.",
     emoji: "👗",
-    tech: ["Next.js 16", "Tailwind 4", "zod","Prisma","Zustand", "Clerk", "Stripe"],
+    tech: [
+      "Next.js 16",
+      "Tailwind 4",
+      "zod",
+      "Prisma",
+      "Zustand",
+      "Clerk",
+      "Stripe",
+    ],
     githubLink: "https://github.com/YoussefScript/ecommerce-store",
     liveLink: "https://ecommerce-store-psi-rust.vercel.app",
   },
@@ -44,7 +69,6 @@ export default function Projects() {
   return (
     <section id="projects" className="py-24 relative">
       <div className="max-w-7xl mx-auto px-6">
-
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -53,10 +77,13 @@ export default function Projects() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-6xl font-bold mb-4 bg-clip-text text-transparent"
-            style={{ backgroundImage: theme.primaryText }}>
+          <h2
+            className="text-4xl md:text-6xl font-bold mb-4 bg-clip-text text-transparent"
+            style={{ backgroundImage: theme.primaryText }}
+          >
             Featured Projects
           </h2>
+
           <motion.div
             className="h-1.5 mx-auto rounded-full mb-6"
             style={{ backgroundImage: theme.secondary }}
@@ -65,9 +92,13 @@ export default function Projects() {
             transition={{ duration: 1, delay: 0.2 }}
             viewport={{ once: true }}
           />
+
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
             A showcase of my{" "}
-            <span className="font-bold bg-clip-text text-transparent" style={{ backgroundImage: theme.accentText }}>
+            <span
+              className="font-bold bg-clip-text text-transparent"
+              style={{ backgroundImage: theme.accentText }}
+            >
               creative work
             </span>{" "}
             and technical expertise
@@ -87,24 +118,34 @@ export default function Projects() {
             >
               {/* Content */}
               <div className="p-10 flex flex-col flex-1">
+                {/* Category Tag */}
+                <div className="mb-4">
+                  <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-white/10 text-white/70 border border-white/10">
+                    {project.category}
+                  </span>
+                </div>
+
                 <div className="mb-6">
                   <h3 className="text-3xl font-bold text-white group-hover:text-blue-400 transition-colors">
                     {project.title}
                   </h3>
                 </div>
-                
+
                 <p className="text-gray-300 mb-8 text-lg leading-relaxed flex-1">
                   {project.description}
                 </p>
 
                 <div className="flex flex-wrap gap-3 mb-10">
                   {project.tech.map((t) => (
-                    <span key={t} className="px-4 py-1.5 bg-white/10 text-white/90 rounded-full text-sm font-semibold border border-white/5 hover:bg-white/20 transition-colors">
+                    <span
+                      key={t}
+                      className="px-4 py-1.5 bg-white/10 text-white/90 rounded-full text-sm font-semibold border border-white/5 hover:bg-white/20 transition-colors"
+                    >
                       {t}
                     </span>
                   ))}
                 </div>
-                
+
                 {/* Links */}
                 <div className="flex flex-col sm:flex-row items-center gap-4">
                   <a
@@ -117,6 +158,7 @@ export default function Projects() {
                     <FaExternalLinkAlt size={16} />
                     Live Demo
                   </a>
+
                   <a
                     href={project.githubLink}
                     target="_blank"
