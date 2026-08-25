@@ -32,7 +32,7 @@ const SKILLS: Skill[] = [
   { name: "TypeScript", icon: SiTypescript, color: "#3178C6", level: 100 },
   { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E", level: 100 },
   { name: "React", icon: FaReact, color: "#61DAFB", level: 100 },
-  { name: "Next.js", icon: SiNextdotjs, color: "#ffffff", level: 100 },
+  { name: "Next", icon: SiNextdotjs, color: "#ffffff", level: 100 },
   { name: "Tailwind CSS", icon: SiTailwindcss, color: "#38BDF8", level: 100 },
   { name: "Shadcn UI", icon: SiShadcnui, color: "#ffffff", level: 100 },
   { name: "Clerk", icon: SiClerk, color: "#6C47FF", level: 100 },
