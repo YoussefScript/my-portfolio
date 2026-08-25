@@ -9,11 +9,11 @@ const PROJECTS = [
     title: "SaaS Landing Page",
     category: "Frontend",
     description:
-      "A high-conversion SaaS landing page with RTL support and dark mode. Built with Next.js and Tailwind for maximum performance and responsiveness.",
+      "A modern, responsive UX/UI website built with React and Vite, featuring a clean design, smooth interactions, and a polished user experience.",
     emoji: "🚀",
-    tech: ["Next.js", "TypeScript", "Tailwind CSS"],
-    githubLink: "https://github.com/YoussefScript/landing-page",
-    liveLink: "https://landing-page-ivory-nine-96.vercel.app",
+    tech: ["React.js", "Tailwind CSS"],
+    githubLink: "https://github.com/YoussefScript/modern-ux-ui-landing-page",
+    liveLink: "https://modern-ux-ui-landing-page.vercel.app",
   },
   {
     title: "SkyCast Weather Dashboard",
