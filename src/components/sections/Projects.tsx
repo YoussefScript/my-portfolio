@@ -11,7 +11,7 @@ const PROJECTS = [
     description:
       "A modern, responsive UX/UI website built with React and Vite, featuring a clean design, smooth interactions, and a polished user experience.",
     emoji: "🚀",
-    tech: ["React.js", "Tailwind CSS"],
+    tech: ["React.js", "Tailwind CSS", "Tanstack Query"],
     githubLink: "https://github.com/YoussefScript/modern-ux-ui-landing-page",
     liveLink: "https://modern-ux-ui-landing-page.vercel.app",
   },
