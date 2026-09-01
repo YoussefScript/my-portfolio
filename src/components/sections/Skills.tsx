@@ -16,6 +16,9 @@ import {
   SiAxios,
   SiGithub,
   SiZod,
+  SiBetterauth,
+  SiTanstack,
+  SiZustand,
 } from "react-icons/si";
 
 import { FaReact, FaGitAlt } from "react-icons/fa";
@@ -35,7 +38,12 @@ const SKILLS: Skill[] = [
   { name: "Next", icon: SiNextdotjs, color: "#ffffff", level: 100 },
   { name: "Tailwind CSS", icon: SiTailwindcss, color: "#38BDF8", level: 100 },
   { name: "Shadcn UI", icon: SiShadcnui, color: "#ffffff", level: 100 },
+
   { name: "Clerk", icon: SiClerk, color: "#6C47FF", level: 100 },
+  { name: "Better Auth", icon: SiBetterauth, color: "#ffffff", level: 100 },
+  { name: "TanStack Query", icon: SiTanstack, color: "#FF4154", level: 100 },
+  { name: "Zustand", icon: SiZustand, color: "#443E38", level: 100 },
+
   { name: "Redux Toolkit", icon: SiRedux, color: "#764ABC", level: 100 },
   { name: "RTK Query", icon: SiRedux, color: "#764ABC", level: 100 },
   { name: "Zod", icon: SiZod, color: "#3068B7", level: 100 },
