@@ -15,6 +15,8 @@ import {
   SiRedux,
   SiGithub,
   SiZod,
+  SiMongodb,
+  SiPrisma,
 } from "react-icons/si";
 
 import { FaReact, FaGitAlt } from "react-icons/fa";
@@ -113,7 +115,6 @@ const ZustandIcon = ({
     className={className}
     style={style}
   >
-    {/* Bear head */}
     <path
       d="M22 35
          C18 26 24 17 33 20
@@ -125,47 +126,16 @@ const ZustandIcon = ({
       fill="currentColor"
     />
 
-    {/* Left ear */}
-    <circle
-      cx="29"
-      cy="29"
-      r="7"
-      fill="currentColor"
-    />
+    <circle cx="29" cy="29" r="7" fill="currentColor" />
 
-    {/* Right ear */}
-    <circle
-      cx="71"
-      cy="29"
-      r="7"
-      fill="currentColor"
-    />
+    <circle cx="71" cy="29" r="7" fill="currentColor" />
 
-    {/* Eyes */}
-    <circle
-      cx="37"
-      cy="48"
-      r="4"
-      fill="white"
-    />
+    <circle cx="37" cy="48" r="4" fill="white" />
 
-    <circle
-      cx="63"
-      cy="48"
-      r="4"
-      fill="white"
-    />
+    <circle cx="63" cy="48" r="4" fill="white" />
 
-    {/* Nose */}
-    <ellipse
-      cx="50"
-      cy="61"
-      rx="7"
-      ry="5"
-      fill="white"
-    />
+    <ellipse cx="50" cy="61" rx="7" ry="5" fill="white" />
 
-    {/* Mouth */}
     <path
       d="M50 66v6M50 72c-5 5-10 2-12-1M50 72c5 5 10 2 12-1"
       stroke="white"
@@ -268,6 +238,34 @@ const SKILLS: Skill[] = [
     name: "Zod",
     icon: SiZod,
     color: "#3068B7",
+    level: 100,
+  },
+
+  {
+    name: "MongoDB",
+    icon: SiMongodb,
+    color: "#47A248",
+    level: 100,
+  },
+
+  {
+    name: "MongoDB Atlas",
+    icon: SiMongodb,
+    color: "#47A248",
+    level: 100,
+  },
+
+  {
+    name: "Mongoose",
+    icon: SiMongodb,
+    color: "#880000",
+    level: 100,
+  },
+
+  {
+    name: "Prisma",
+    icon: SiPrisma,
+    color: "#5A67D8",
     level: 100,
   },
 
@@ -407,7 +405,6 @@ export default function Skills() {
                 }}
                 className="group relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 flex flex-col items-center justify-center transition-all duration-300 hover:border-white/20"
               >
-
                 {/* Glow */}
                 <div
                   className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-10 blur-xl transition-opacity duration-300"
