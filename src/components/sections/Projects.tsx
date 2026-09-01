@@ -11,7 +11,7 @@ const PROJECTS = [
     description:
       "A modern, responsive UX/UI website built with React and Vite, featuring a clean design, smooth interactions, and a polished user experience.",
     emoji: "🚀",
-    tech: ["React.js", "Tailwind CSS", "Tanstack Query"],
+    tech: ["React.js", "Tailwind CSS"],
     githubLink: "https://github.com/YoussefScript/modern-ux-ui-landing-page",
     liveLink: "https://modern-ux-ui-landing-page.vercel.app",
   },
@@ -21,7 +21,7 @@ const PROJECTS = [
     description:
       "A premium weather application with interactive maps and real-time geocoding. Features a stunning glassmorphic UI and multi-layered solar details.",
     emoji: "🌤️",
-    tech: ["React 19", "Tailwind 4", "Zod", "Vite"],
+    tech: ["React 19", "Tailwind 4", "Zod", "Vite", "Tanstack Query"],
     githubLink: "https://github.com/YoussefScript/Weather-React-DashBoard",
     liveLink: "https://skycast-beige-delta.vercel.app/",
   },
