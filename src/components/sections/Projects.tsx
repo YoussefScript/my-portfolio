@@ -6,24 +6,24 @@ import { useTheme } from "@/context/ThemeContext";
 
 const PROJECTS = [
   {
-    title: "SaaS Landing Page",
-    category: "Frontend",
+    title: "Job Application Tracker Kanban DashBoard",
+    category: "Full Stack",
     description:
-      "A modern, responsive UX/UI website built with React and Vite, featuring a clean design, smooth interactions, and a polished user experience.",
-    emoji: "🚀",
-    tech: ["React.js", "Tailwind CSS"],
-    githubLink: "https://github.com/YoussefScript/modern-ux-ui-landing-page",
-    liveLink: "https://modern-ux-ui-landing-page.vercel.app",
-  },
-  {
-    title: "SkyCast Weather Dashboard",
-    category: "Frontend",
-    description:
-      "A premium weather application with interactive maps and real-time geocoding. Features a stunning glassmorphic UI and multi-layered solar details.",
-    emoji: "🌤️",
-    tech: ["React 19", "Tailwind 4", "Zod", "Vite", "Tanstack Query"],
-    githubLink: "https://github.com/YoussefScript/Weather-React-DashBoard",
-    liveLink: "https://skycast-beige-delta.vercel.app/",
+      "A clean, responsive Kanban-style job application tracker built with Next.js, React, Tailwind CSS and MongoDB. Manage job applications across stages, add notes, tags and drag-and-drop between columns.",
+    emoji: "📊",
+    tech: [
+      "Next.js 16",
+      "Tailwind 4",
+      "Shadcn UI",
+      "React 19",
+      "MongoDB",  
+      "MongoDB Atlas",  
+      "Mongoose",
+      "better auth",
+      "@dnd-kit for drag-and-drop",
+    ],
+    githubLink: "https://github.com/YoussefScript/job-application-tracker",
+    liveLink: "https://job-application-tracker-nu-two.vercel.app",
   },
   {
     title: "E-Commerce Admin Dashboard",
@@ -60,6 +60,26 @@ const PROJECTS = [
     ],
     githubLink: "https://github.com/YoussefScript/ecommerce-store",
     liveLink: "https://ecommerce-store-psi-rust.vercel.app",
+  },
+  {
+    title: "SaaS Landing Page",
+    category: "Frontend",
+    description:
+      "A modern, responsive UX/UI website built with React and Vite, featuring a clean design, smooth interactions, and a polished user experience.",
+    emoji: "🚀",
+    tech: ["React.js", "Tailwind CSS"],
+    githubLink: "https://github.com/YoussefScript/modern-ux-ui-landing-page",
+    liveLink: "https://modern-ux-ui-landing-page.vercel.app",
+  },
+  {
+    title: "SkyCast Weather Dashboard",
+    category: "Frontend",
+    description:
+      "A premium weather application with interactive maps and real-time geocoding. Features a stunning glassmorphic UI and multi-layered solar details.",
+    emoji: "🌤️",
+    tech: ["React 19", "Tailwind 4", "Zod", "Vite", "Tanstack Query"],
+    githubLink: "https://github.com/YoussefScript/Weather-React-DashBoard",
+    liveLink: "https://skycast-beige-delta.vercel.app/",
   },
 ];
 
