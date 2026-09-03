@@ -17,6 +17,8 @@ import {
   SiZod,
   SiMongodb,
   SiPrisma,
+  SiPostgresql,
+  SiNeon,
 } from "react-icons/si";
 
 import { FaReact, FaGitAlt } from "react-icons/fa";
@@ -259,6 +261,20 @@ const SKILLS: Skill[] = [
     name: "Mongoose",
     icon: SiMongodb,
     color: "#880000",
+    level: 100,
+  },
+
+  {
+    name: "PostgreSQL",
+    icon: SiPostgresql,
+    color: "#4169E1",
+    level: 100,
+  },
+
+  {
+    name: "Neon",
+    icon: SiNeon,
+    color: "#00E599",
     level: 100,
   },
 
