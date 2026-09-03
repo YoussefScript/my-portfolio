@@ -18,7 +18,6 @@ import {
   SiMongodb,
   SiPrisma,
   SiPostgresql,
-  SiNeon,
 } from "react-icons/si";
 
 import { FaReact, FaGitAlt } from "react-icons/fa";
@@ -143,6 +142,31 @@ const ZustandIcon = ({
       stroke="white"
       strokeWidth="3"
       strokeLinecap="round"
+    />
+  </svg>
+);
+
+/* =========================
+   Neon Icon
+========================= */
+
+const NeonIcon = ({
+  className,
+  style,
+}: {
+  className?: string;
+  style?: React.CSSProperties;
+}) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className={className}
+    style={style}
+  >
+    <path
+      d="M5 4.5C5 3.67 5.67 3 6.5 3h2.18c.48 0 .93.23 1.2.63l7.64 11.15V4.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v15c0 .83-.67 1.5-1.5 1.5h-2.18c-.48 0-.93-.23-1.2-.63L8 9.22V19.5c0 .83-.67 1.5-1.5 1.5S5 20.33 5 19.5v-15Z"
+      fill="currentColor"
     />
   </svg>
 );
@@ -273,7 +297,7 @@ const SKILLS: Skill[] = [
 
   {
     name: "Neon",
-    icon: SiNeon,
+    icon: NeonIcon,
     color: "#00E599",
     level: 100,
   },
