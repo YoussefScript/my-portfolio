@@ -19,8 +19,6 @@ import {
   SiMongodb,
   SiPrisma,
   SiPostgresql,
-  SiVitest,
-  SiTestinglibrary,
 } from "react-icons/si";
 
 import { FaReact, FaGitAlt } from "react-icons/fa";
@@ -31,7 +29,7 @@ interface Skill {
   icon: React.ElementType;
   color: string;
   level: number;
-  category: "Frontend" | "State & Data" | "Backend & DB" | "Testing" | "Auth & Tools";
+  category: "Frontend" | "State & Data" | "Backend & DB" | "Auth & Tools";
 }
 
 /* =========================
@@ -170,79 +168,7 @@ const NeonIcon = ({
 );
 
 /* =========================
-   MSW Icon
-========================= */
-
-const MSWIcon = ({
-  className,
-  style,
-}: {
-  className?: string;
-  style?: React.CSSProperties;
-}) => (
-  <svg
-    viewBox="0 0 24 24"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    className={className}
-    style={style}
-  >
-    <path
-      d="M3 6l4.5 4.5L12 6l4.5 4.5L21 6v12h-3v-6.75L13.5 15l-3-3L6 16.5V18H3V6z"
-      fill="currentColor"
-    />
-  </svg>
-);
-
-/* =========================
-   Playwright Icon
-========================= */
-
-const PlaywrightIcon = ({
-  className,
-  style,
-}: {
-  className?: string;
-  style?: React.CSSProperties;
-}) => (
-  <svg
-    viewBox="0 0 24 24"
-    fill="currentColor"
-    xmlns="http://www.w3.org/2000/svg"
-    className={className}
-    style={style}
-  >
-    <path d="M14.5 2a.5.5 0 0 0-.5.5v5.051a.5.5 0 0 1-.778.419L2.52 2.052a.5.5 0 0 0-.77.418v16.06a.5.5 0 0 0 .77.419l10.702-5.918a.5.5 0 0 1 .778.419V21.5a.5.5 0 0 0 .77.418l7.73-4.278a.5.5 0 0 0 .23-.418V6.778a.5.5 0 0 0-.23-.418L14.77 2.08A.5.5 0 0 0 14.5 2z" />
-  </svg>
-);
-
-/* =========================
-   axe-core Icon
-========================= */
-
-const AxeCoreIcon = ({
-  className,
-  style,
-}: {
-  className?: string;
-  style?: React.CSSProperties;
-}) => (
-  <svg
-    viewBox="0 0 24 24"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    className={className}
-    style={style}
-  >
-    <path
-      d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c.83 0 1.5.67 1.5 1.5S12.83 8 12 8s-1.5-.67-1.5-1.5S11.17 5 12 5zm4.5 6H15v7h-2v-4h-2v4H9v-7H7.5V9.5h9V11z"
-      fill="currentColor"
-    />
-  </svg>
-);
-
-/* =========================
-   Skills Data (Exact 24 skills preserved)
+   Skills Data
 ========================= */
 
 const SKILLS: Skill[] = [
@@ -380,41 +306,6 @@ const SKILLS: Skill[] = [
     category: "Backend & DB",
   },
   {
-    name: "Vitest",
-    icon: SiVitest,
-    color: "#729B1B",
-    level: 100,
-    category: "Testing",
-  },
-  {
-    name: "React Testing Library",
-    icon: SiTestinglibrary,
-    color: "#E33332",
-    level: 100,
-    category: "Testing",
-  },
-  {
-    name: "MSW",
-    icon: MSWIcon,
-    color: "#FF6A00",
-    level: 100,
-    category: "Testing",
-  },
-  {
-    name: "Playwright",
-    icon: PlaywrightIcon,
-    color: "#45BA4B",
-    level: 100,
-    category: "Testing",
-  },
-  {
-    name: "axe-core",
-    icon: AxeCoreIcon,
-    color: "#00C0F3",
-    level: 100,
-    category: "Testing",
-  },
-  {
     name: "Sass",
     icon: SiSass,
     color: "#CC6699",
@@ -451,7 +342,13 @@ const SKILLS: Skill[] = [
   },
 ];
 
-const CATEGORIES = ["All", "Frontend", "State & Data", "Backend & DB", "Testing", "Auth & Tools"] as const;
+const CATEGORIES = [
+  "All",
+  "Frontend",
+  "State & Data",
+  "Backend & DB",
+  "Auth & Tools",
+] as const;
 
 export default function Skills() {
   const theme = useTheme();
@@ -520,6 +417,7 @@ export default function Skills() {
               category === "All"
                 ? SKILLS.length
                 : SKILLS.filter((s) => s.category === category).length;
+
             const isActive = activeCategory === category;
 
             return (
@@ -539,10 +437,16 @@ export default function Skills() {
                     style={{
                       backgroundImage: theme.primary,
                     }}
-                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                    transition={{
+                      type: "spring",
+                      stiffness: 380,
+                      damping: 30,
+                    }}
                   />
                 )}
+
                 <span className="relative z-10">{category}</span>
+
                 <span
                   className={`relative z-10 text-xs px-2 py-0.5 rounded-full ${
                     isActive
@@ -596,6 +500,7 @@ export default function Skills() {
                     <span className="text-white font-medium text-xs sm:text-sm tracking-tight group-hover:text-white transition-colors leading-tight whitespace-normal">
                       {skill.name}
                     </span>
+
                     <span className="text-[10px] text-gray-400 leading-tight">
                       {skill.category}
                     </span>
@@ -633,4 +538,3 @@ export default function Skills() {
     </section>
   );
 }
-
