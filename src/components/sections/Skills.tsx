@@ -19,6 +19,7 @@ import {
   SiMongodb,
   SiPrisma,
   SiPostgresql,
+  SiPostman,
 } from "react-icons/si";
 
 import { FaReact, FaGitAlt } from "react-icons/fa";
@@ -325,6 +326,13 @@ const SKILLS: Skill[] = [
     color: "#1572B6",
     level: 100,
     category: "Frontend",
+  },
+  {
+    name: "Postman",
+    icon: SiPostman,
+    color: "#FF6C37",
+    level: 100,
+    category: "Auth & Tools",
   },
   {
     name: "Git",
