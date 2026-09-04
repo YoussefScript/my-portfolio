@@ -10,7 +10,7 @@ export default function About() {
   const theme = useTheme();
 
   const stats: { label: string; value: ReactNode; icon: string }[] = [
-    { label: "Technologies", value: "20+", icon: "🛠️" },
+    { label: "Technologies", value: "25+", icon: "🛠️" },
     { label: "Projects", value: <InfinityIcon className="w-6 h-6" />, icon: "🚀" },
     { label: "Experience Years", value: "3+", icon: "⏳" },
     { label: "Lines of Code", value: <InfinityIcon className="w-6 h-6" />, icon: "</>" },
@@ -20,7 +20,7 @@ export default function About() {
     <section id="about" className="py-24 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="grid md:grid-cols-2 gap-16 items-center">
-          
+
           {/* Text Content */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -40,27 +40,27 @@ export default function About() {
               transition={{ duration: 1, delay: 0.2 }}
               viewport={{ once: true }}
             />
-            
+
             <p className="text-xl text-gray-300 mb-6 leading-relaxed">
               Get to know the person behind the{" "}
               <span className="font-bold bg-clip-text text-transparent" style={{ backgroundImage: theme.accentText }}>
                 code
               </span>
             </p>
-            
+
             <div className="space-y-4 text-gray-400 text-lg">
               <p>
-                I&apos;m a passionate frontend developer with a love for creating beautiful, functional web experiences. 
-                My journey in web development started with curiosity and has evolved into a dedication to crafting 
+                I&apos;m a passionate full-stack developer with a love for creating beautiful, functional web experiences.
+                My journey in web development started with curiosity and has evolved into a dedication to crafting
                 digital solutions that make a difference.
               </p>
               <p>
-                When I&apos;m not coding, you&apos;ll find me exploring new technologies, contributing to open-source 
-                projects, or learning about the latest trends in web development. I believe in continuous learning 
+                When I&apos;m not coding, you&apos;ll find me exploring new technologies, contributing to open-source
+                projects, or learning about the latest trends in web development. I believe in continuous learning
                 and pushing the boundaries of what&apos;s possible on the web.
               </p>
               <p>
-                My goal is to bridge the gap between design and development, creating seamless user experiences 
+                My goal is to bridge the gap between design and development, creating seamless user experiences
                 that are both visually stunning and highly functional.
               </p>
             </div>
@@ -110,11 +110,11 @@ export default function About() {
             className="relative group"
           >
             {/* Background Glow */}
-            <div 
+            <div
               className="absolute -inset-4 rounded-3xl opacity-20 group-hover:opacity-40 blur-2xl transition-all duration-500 pointer-events-none"
               style={{ backgroundImage: theme.primary }}
             />
-            
+
             {/* Image Wrap */}
             <div className="relative aspect-square rounded-3xl overflow-hidden border-2 border-white/10 group-hover:border-white/20 transition-all duration-500 shadow-2xl">
               <Image
@@ -130,7 +130,7 @@ export default function About() {
             </div>
 
             {/* Decorative Elements */}
-            <motion.div 
+            <motion.div
               className="absolute -bottom-6 -right-6 w-32 h-32 rounded-full blur-3xl opacity-30"
               style={{ backgroundImage: theme.secondary }}
               animate={{
@@ -139,7 +139,7 @@ export default function About() {
               }}
               transition={{ duration: 4, repeat: Infinity }}
             />
-            <motion.div 
+            <motion.div
               className="absolute -top-6 -left-6 w-32 h-32 rounded-full blur-3xl opacity-30"
               style={{ backgroundImage: theme.accent }}
               animate={{

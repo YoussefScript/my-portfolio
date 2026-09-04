@@ -96,7 +96,13 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     return () => clearInterval(interval);
   }, []);
 
-  if (!mounted) return null;
+  if (!mounted) {
+    return (
+      <ThemeContext.Provider value={THEMES[0]}>
+        {children}
+      </ThemeContext.Provider>
+    );
+  }
 
   return (
     <ThemeContext.Provider value={THEMES[idx]}>

@@ -165,18 +165,42 @@ export default function Contact() {
                 </div>
                 <motion.button
                   type="submit"
-                  className="w-full py-3 px-6 text-white font-semibold rounded-lg transition-opacity disabled:opacity-50"
+                  className="w-full py-4 px-6 text-white font-semibold rounded-xl transition-all shadow-lg flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
                   style={{ backgroundImage: theme.primary }}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   disabled={sending}
                 >
-                  {sending ? "Sending..." : "Send Message"}
+                  {sending ? (
+                    <>
+                      <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                      </svg>
+                      <span>Sending Message...</span>
+                    </>
+                  ) : (
+                    <span>Send Message</span>
+                  )}
                 </motion.button>
+
                 {status !== null && (
-                  <p className={`text-sm ${status ? "text-green-400" : "text-red-400"}`}>
-                    {status ? "✅ Message sent successfully!" : "❌ Failed to send. Try again."}
-                  </p>
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className={`p-4 rounded-xl text-sm font-medium border flex items-center gap-3 ${
+                      status
+                        ? "bg-green-500/10 border-green-500/30 text-green-300"
+                        : "bg-red-500/10 border-red-500/30 text-red-300"
+                    }`}
+                  >
+                    <span className="text-xl">{status ? "✨" : "⚠️"}</span>
+                    <span>
+                      {status
+                        ? "Thank you! Your message has been sent successfully. I will get back to you soon!"
+                        : "Failed to send message. Please try again or email directly."}
+                    </span>
+                  </motion.div>
                 )}
               </form>
             </div>

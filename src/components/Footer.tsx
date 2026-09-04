@@ -38,7 +38,7 @@ export default function Footer() {
                 style={{ backgroundImage: theme.secondaryText }}>
                 Youssef Emad Kamel
               </span>
-              <span className="text-xs md:text-sm text-gray-400 font-medium">Frontend Developer</span>
+              <span className="text-xs md:text-sm text-gray-400 font-medium">Full-Stack Developer</span>
             </div>
           </motion.div>
 

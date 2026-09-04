@@ -50,7 +50,7 @@ export default function Hero() {
             transition={{ duration: 1, delay: 0.4 }}
           >
             <span className="block bg-clip-text text-transparent" style={{ backgroundImage: theme.secondaryText }}>
-              Frontend Developer
+              Full-Stack Developer
             </span>
             <span className="block text-white">
               {"& Creative "}

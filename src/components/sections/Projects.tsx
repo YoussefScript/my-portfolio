@@ -1,8 +1,11 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import { useTheme } from "@/context/ThemeContext";
+
+const CATEGORIES = ["All", "Full Stack", "Frontend"] as const;
 
 const PROJECTS = [
   {
@@ -85,17 +88,23 @@ const PROJECTS = [
 
 export default function Projects() {
   const theme = useTheme();
+  const [activeCategory, setActiveCategory] = useState<string>("All");
+
+  const filteredProjects =
+    activeCategory === "All"
+      ? PROJECTS
+      : PROJECTS.filter((p) => p.category === activeCategory);
 
   return (
-    <section id="projects" className="py-24 relative">
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="projects" className="py-24 relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
           <h2
             className="text-4xl md:text-6xl font-bold mb-4 bg-clip-text text-transparent"
@@ -125,74 +134,139 @@ export default function Projects() {
           </p>
         </motion.div>
 
-        {/* Cards */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-          {PROJECTS.map((project, i) => (
-            <motion.div
-              key={project.title}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 * i }}
-              viewport={{ once: true }}
-              className="group overflow-hidden rounded-3xl bg-white/5 backdrop-blur-md border border-white/10 hover:border-white/20 transition-all duration-500 flex flex-col hover:shadow-2xl hover:shadow-blue-500/10"
-            >
-              {/* Content */}
-              <div className="p-10 flex flex-col flex-1">
-                {/* Category Tag */}
-                <div className="mb-4">
-                  <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-white/10 text-white/70 border border-white/10">
-                    {project.category}
-                  </span>
-                </div>
+        {/* Category Filter Tabs */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="flex flex-wrap justify-center items-center gap-3 mb-12"
+        >
+          {CATEGORIES.map((category) => {
+            const count =
+              category === "All"
+                ? PROJECTS.length
+                : PROJECTS.filter((p) => p.category === category).length;
+            const isActive = activeCategory === category;
 
-                <div className="mb-6">
-                  <h3 className="text-3xl font-bold text-white group-hover:text-blue-400 transition-colors">
-                    {project.title}
-                  </h3>
-                </div>
-
-                <p className="text-gray-300 mb-8 text-lg leading-relaxed flex-1">
-                  {project.description}
-                </p>
-
-                <div className="flex flex-wrap gap-3 mb-10">
-                  {project.tech.map((t) => (
-                    <span
-                      key={t}
-                      className="px-4 py-1.5 bg-white/10 text-white/90 rounded-full text-sm font-semibold border border-white/5 hover:bg-white/20 transition-colors"
-                    >
-                      {t}
-                    </span>
-                  ))}
-                </div>
-
-                {/* Links */}
-                <div className="flex flex-col sm:flex-row items-center gap-4">
-                  <a
-                    href={project.liveLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full sm:flex-1 inline-flex items-center justify-center gap-3 px-8 py-5 text-white rounded-2xl transition-all duration-300 hover:scale-[1.02] active:scale-95 text-sm font-bold shadow-xl shadow-blue-500/20 uppercase tracking-widest"
+            return (
+              <button
+                key={category}
+                onClick={() => setActiveCategory(category)}
+                className={`relative px-5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-300 flex items-center gap-2 ${
+                  isActive
+                    ? "text-white border border-white/20 shadow-lg shadow-black/20"
+                    : "text-gray-400 hover:text-white bg-white/5 border border-white/10 hover:border-white/20"
+                }`}
+              >
+                {isActive && (
+                  <motion.div
+                    layoutId="activeProjectTab"
+                    className="absolute inset-0 rounded-xl bg-gradient-to-r opacity-90"
                     style={{ backgroundImage: theme.primary }}
-                  >
-                    <FaExternalLinkAlt size={16} />
-                    Live Demo
-                  </a>
+                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                  />
+                )}
+                <span className="relative z-10">{category}</span>
+                <span
+                  className={`relative z-10 text-xs px-2 py-0.5 rounded-full ${
+                    isActive
+                      ? "bg-black/30 text-white"
+                      : "bg-white/10 text-gray-400"
+                  }`}
+                >
+                  {count}
+                </span>
+              </button>
+            );
+          })}
+        </motion.div>
 
-                  <a
-                    href={project.githubLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full sm:flex-1 inline-flex items-center justify-center gap-3 px-8 py-5 text-white/80 rounded-2xl bg-white/5 border border-white/10 transition-all duration-300 hover:scale-[1.02] active:scale-95 hover:text-white hover:bg-white/10 text-sm font-bold uppercase tracking-widest backdrop-blur-sm"
-                  >
-                    <FaGithub size={20} />
-                    View Code
-                  </a>
+        {/* Cards */}
+        <motion.div layout className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+          <AnimatePresence mode="popLayout">
+            {filteredProjects.map((project, i) => (
+              <motion.div
+                layout
+                key={project.title}
+                initial={{ opacity: 0, y: 30, scale: 0.95 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.9 }}
+                transition={{ duration: 0.4 }}
+                whileHover={{ y: -6, scale: 1.01 }}
+                className="group relative overflow-hidden rounded-3xl bg-white/[0.04] backdrop-blur-md border border-white/10 hover:border-white/30 transition-all duration-500 flex flex-col shadow-xl hover:shadow-2xl"
+              >
+                {/* Dynamic Ambient Theme Glow on Hover */}
+                <div
+                  className="absolute -inset-2 rounded-3xl opacity-0 group-hover:opacity-20 blur-2xl transition-opacity duration-500 pointer-events-none"
+                  style={{ backgroundImage: theme.primary }}
+                />
+
+                {/* Content */}
+                <div className="p-8 md:p-10 flex flex-col flex-1 relative z-10">
+                  {/* Category */}
+                  <div className="mb-4">
+                    <span className="inline-flex items-center px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-white/10 text-white/80 border border-white/15">
+                      {project.category}
+                    </span>
+                  </div>
+
+                  <div className="mb-4">
+                    <h3
+                      className="text-2xl md:text-3xl font-bold text-white transition-colors duration-300"
+                    >
+                      {project.title}
+                    </h3>
+                  </div>
+
+                  <p className="text-gray-300 mb-8 text-base md:text-lg leading-relaxed flex-1">
+                    {project.description}
+                  </p>
+
+                  {/* Tech Stack Pills */}
+                  <div className="flex flex-wrap gap-2.5 mb-8">
+                    {project.tech.map((t) => (
+                      <span
+                        key={t}
+                        className="px-3.5 py-1.5 bg-white/10 text-white/90 rounded-full text-xs font-semibold border border-white/10 hover:bg-white/20 transition-colors"
+                      >
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* Links */}
+                  <div className="flex flex-col sm:flex-row items-center gap-4 mt-auto">
+                    <motion.a
+                      href={project.liveLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full sm:flex-1 inline-flex items-center justify-center gap-3 px-6 py-4 text-white rounded-2xl text-xs sm:text-sm font-bold uppercase tracking-widest shadow-lg shadow-black/20"
+                      style={{ backgroundImage: theme.primary }}
+                      whileHover={{ scale: 1.03 }}
+                      whileTap={{ scale: 0.97 }}
+                    >
+                      <FaExternalLinkAlt size={14} />
+                      Live Demo
+                    </motion.a>
+
+                    <motion.a
+                      href={project.githubLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full sm:flex-1 inline-flex items-center justify-center gap-3 px-6 py-4 text-white/90 rounded-2xl bg-white/5 border border-white/10 text-xs sm:text-sm font-bold uppercase tracking-widest backdrop-blur-sm hover:bg-white/10 hover:text-white"
+                      whileHover={{ scale: 1.03 }}
+                      whileTap={{ scale: 0.97 }}
+                    >
+                      <FaGithub size={18} />
+                      View Code
+                    </motion.a>
+                  </div>
                 </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </motion.div>
       </div>
     </section>
   );
