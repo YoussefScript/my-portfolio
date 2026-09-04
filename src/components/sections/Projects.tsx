@@ -38,7 +38,6 @@ const PROJECTS = [
       "Next.js 15",
       "Tailwind 4",
       "React.js 19",
-      "React 19",
       "PostgreSQL",  
       "PrismaORM",  
       "Neon",
