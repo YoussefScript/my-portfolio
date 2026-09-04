@@ -45,8 +45,8 @@ const PROJECTS = [
       "NextAuth.js v5",
       "Zod",
     ],
-    githubLink: "https://github.com/YoussefScript/job-application-tracker",
-    liveLink: "https://job-application-tracker-nu-two.vercel.app",
+    githubLink: "https://github.com/YoussefScript/event-planner",
+    liveLink: "https://event-planner-theta-ochre.vercel.app",
   },
   {
     title: "E-Commerce Admin Dashboard",
@@ -63,8 +63,8 @@ const PROJECTS = [
       "Clerk",
       "Stripe",
     ],
-    githubLink: "https://github.com/YoussefScript/event-planner",
-    liveLink: "https://event-planner-theta-ochre.vercel.app",
+    githubLink: "https://github.com/YoussefScript/ecommerce-admin",
+    liveLink: "https://ecommerce-admin-inky-alpha.vercel.app",
   },
   {
     title: "E-Commerce Store",
