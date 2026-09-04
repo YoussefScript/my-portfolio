@@ -10,7 +10,7 @@ export default function About() {
   const theme = useTheme();
 
   const stats: { label: string; value: ReactNode; icon: string }[] = [
-    { label: "Technologies", value: "25+", icon: "🛠️" },
+    { label: "Technologies", value: "20+", icon: "🛠️" },
     { label: "Projects", value: <InfinityIcon className="w-6 h-6" />, icon: "🚀" },
     { label: "Experience Years", value: "3+", icon: "⏳" },
     { label: "Lines of Code", value: <InfinityIcon className="w-6 h-6" />, icon: "</>" },
