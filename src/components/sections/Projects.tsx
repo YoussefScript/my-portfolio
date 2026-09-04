@@ -29,6 +29,26 @@ const PROJECTS = [
     liveLink: "https://job-application-tracker-nu-two.vercel.app",
   },
   {
+    title: "Event Planner",
+    category: "Full Stack",
+    description:
+      "A modern full-stack Event Planning web application built with Next.js 15, React 19, Prisma, PostgreSQL, and NextAuth.js.",
+    emoji: "📊",
+    tech: [
+      "Next.js 15",
+      "Tailwind 4",
+      "React.js 19",
+      "React 19",
+      "PostgreSQL",  
+      "PrismaORM",  
+      "Neon",
+      "NextAuth.js v5",
+      "Zod",
+    ],
+    githubLink: "https://github.com/YoussefScript/job-application-tracker",
+    liveLink: "https://job-application-tracker-nu-two.vercel.app",
+  },
+  {
     title: "E-Commerce Admin Dashboard",
     category: "Full Stack",
     description:
@@ -43,8 +63,8 @@ const PROJECTS = [
       "Clerk",
       "Stripe",
     ],
-    githubLink: "https://github.com/YoussefScript/ecommerce-admin",
-    liveLink: "https://ecommerce-admin-inky-alpha.vercel.app",
+    githubLink: "https://github.com/YoussefScript/event-planner",
+    liveLink: "https://event-planner-theta-ochre.vercel.app",
   },
   {
     title: "E-Commerce Store",
