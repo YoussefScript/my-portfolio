@@ -21,6 +21,8 @@ import {
   SiPostgresql,
   SiPostman,
   SiNodedotjs,
+  SiExpress, // Added Express icon
+  SiNpm,     // Added npm icon
 } from "react-icons/si";
 
 import { FaReact, FaGitAlt } from "react-icons/fa";
@@ -272,6 +274,13 @@ const SKILLS: Skill[] = [
     category: "Backend",
   },
   {
+    name: "Express.js",
+    icon: SiExpress,
+    color: "#ffffff",
+    level: 100,
+    category: "Backend",
+  },
+  {
     name: "MongoDB",
     icon: SiMongodb,
     color: "#47A248",
@@ -333,6 +342,13 @@ const SKILLS: Skill[] = [
     color: "#1572B6",
     level: 100,
     category: "Frontend",
+  },
+  {
+    name: "npm",
+    icon: SiNpm,
+    color: "#CB3837",
+    level: 100,
+    category: "Auth & Tools",
   },
   {
     name: "Postman",
