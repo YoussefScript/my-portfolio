@@ -21,19 +21,25 @@ import {
   SiPostgresql,
   SiPostman,
   SiNodedotjs,
-  SiExpress, // Added Express icon
-  SiNpm,     // Added npm icon
+  SiExpress,
+  SiNpm,
 } from "react-icons/si";
 
 import { FaReact, FaGitAlt } from "react-icons/fa";
 import { useTheme } from "@/context/ThemeContext";
+
+type CategoryType =
+  | "Frontend & UI"
+  | "State Management & Data Fetching"
+  | "Backend, Authentication & Validation"
+  | "Databases, ORMs & Infrastructure";
 
 interface Skill {
   name: string;
   icon: React.ElementType;
   color: string;
   level: number;
-  category: "Frontend" | "State & Data" | "Backend" | "Databases & ORM/ODM" | "Auth & Tools";
+  category: CategoryType;
 }
 
 /* =========================
@@ -175,211 +181,217 @@ const NeonIcon = ({
 ========================= */
 
 const SKILLS: Skill[] = [
+  // --- Frontend & UI ---
   {
     name: "TypeScript",
     icon: SiTypescript,
     color: "#3178C6",
     level: 100,
-    category: "Frontend",
+    category: "Frontend & UI",
   },
   {
     name: "JavaScript",
     icon: SiJavascript,
     color: "#F7DF1E",
     level: 100,
-    category: "Frontend",
+    category: "Frontend & UI",
   },
   {
     name: "React",
     icon: FaReact,
     color: "#61DAFB",
     level: 100,
-    category: "Frontend",
+    category: "Frontend & UI",
   },
   {
-    name: "Next",
+    name: "Next.js",
     icon: SiNextdotjs,
     color: "#ffffff",
     level: 100,
-    category: "Frontend",
-  },
-  {
-    name: "Tailwind CSS",
-    icon: SiTailwindcss,
-    color: "#38BDF8",
-    level: 100,
-    category: "Frontend",
-  },
-  {
-    name: "Shadcn UI",
-    icon: SiShadcnui,
-    color: "#ffffff",
-    level: 100,
-    category: "Frontend",
-  },
-  {
-    name: "Clerk",
-    icon: SiClerk,
-    color: "#6C47FF",
-    level: 100,
-    category: "Auth & Tools",
-  },
-  {
-    name: "Better Auth",
-    icon: BetterAuthIcon,
-    color: "#ffffff",
-    level: 100,
-    category: "Auth & Tools",
-  },
-  {
-    name: "TanStack Query",
-    icon: TanStackIcon,
-    color: "#FF4154",
-    level: 100,
-    category: "State & Data",
-  },
-  {
-    name: "Zustand",
-    icon: ZustandIcon,
-    color: "#F0EFEA",
-    level: 100,
-    category: "State & Data",
-  },
-  {
-    name: "Redux Toolkit",
-    icon: SiRedux,
-    color: "#764ABC",
-    level: 100,
-    category: "State & Data",
-  },
-  {
-    name: "RTK Query",
-    icon: SiRedux,
-    color: "#764ABC",
-    level: 100,
-    category: "State & Data",
-  },
-  {
-    name: "Zod",
-    icon: SiZod,
-    color: "#3068B7",
-    level: 100,
-    category: "State & Data",
-  },
-  {
-    name: "Node.js",
-    icon: SiNodedotjs,
-    color: "#339933",
-    level: 100,
-    category: "Backend",
-  },
-  {
-    name: "Express.js",
-    icon: SiExpress,
-    color: "#ffffff",
-    level: 100,
-    category: "Backend",
-  },
-  {
-    name: "MongoDB",
-    icon: SiMongodb,
-    color: "#47A248",
-    level: 100,
-    category: "Databases & ORM/ODM",
-  },
-  {
-    name: "MongoDB Atlas",
-    icon: SiMongodb,
-    color: "#47A248",
-    level: 100,
-    category: "Databases & ORM/ODM",
-  },
-  {
-    name: "Mongoose",
-    icon: SiMongodb,
-    color: "#880000",
-    level: 100,
-    category: "Databases & ORM/ODM",
-  },
-  {
-    name: "PostgreSQL",
-    icon: SiPostgresql,
-    color: "#4169E1",
-    level: 100,
-    category: "Databases & ORM/ODM",
-  },
-  {
-    name: "Neon",
-    icon: NeonIcon,
-    color: "#00E599",
-    level: 100,
-    category: "Databases & ORM/ODM",
-  },
-  {
-    name: "Prisma",
-    icon: SiPrisma,
-    color: "#5A67D8",
-    level: 100,
-    category: "Databases & ORM/ODM",
-  },
-  {
-    name: "Sass",
-    icon: SiSass,
-    color: "#CC6699",
-    level: 100,
-    category: "Frontend",
+    category: "Frontend & UI",
   },
   {
     name: "HTML",
     icon: SiHtml5,
     color: "#E34F26",
     level: 100,
-    category: "Frontend",
+    category: "Frontend & UI",
   },
   {
     name: "CSS",
     icon: SiCss,
     color: "#1572B6",
     level: 100,
-    category: "Frontend",
+    category: "Frontend & UI",
   },
   {
-    name: "npm",
-    icon: SiNpm,
-    color: "#CB3837",
+    name: "Sass",
+    icon: SiSass,
+    color: "#CC6699",
     level: 100,
-    category: "Auth & Tools",
+    category: "Frontend & UI",
+  },
+  {
+    name: "Tailwind CSS",
+    icon: SiTailwindcss,
+    color: "#38BDF8",
+    level: 100,
+    category: "Frontend & UI",
+  },
+  {
+    name: "shadcn/ui",
+    icon: SiShadcnui,
+    color: "#ffffff",
+    level: 100,
+    category: "Frontend & UI",
+  },
+
+  // --- State Management & Data Fetching ---
+  {
+    name: "TanStack Query",
+    icon: TanStackIcon,
+    color: "#FF4154",
+    level: 100,
+    category: "State Management & Data Fetching",
+  },
+  {
+    name: "Zustand",
+    icon: ZustandIcon,
+    color: "#F0EFEA",
+    level: 100,
+    category: "State Management & Data Fetching",
+  },
+  {
+    name: "Redux Toolkit (RTK)",
+    icon: SiRedux,
+    color: "#764ABC",
+    level: 100,
+    category: "State Management & Data Fetching",
+  },
+  {
+    name: "RTK Query",
+    icon: SiRedux,
+    color: "#764ABC",
+    level: 100,
+    category: "State Management & Data Fetching",
+  },
+
+  // --- Backend, Authentication & Validation ---
+  {
+    name: "Node.js",
+    icon: SiNodedotjs,
+    color: "#339933",
+    level: 100,
+    category: "Backend, Authentication & Validation",
+  },
+  {
+    name: "Express.js",
+    icon: SiExpress,
+    color: "#ffffff",
+    level: 100,
+    category: "Backend, Authentication & Validation",
+  },
+  {
+    name: "Zod",
+    icon: SiZod,
+    color: "#3068B7",
+    level: 100,
+    category: "Backend, Authentication & Validation",
+  },
+  {
+    name: "Clerk",
+    icon: SiClerk,
+    color: "#6C47FF",
+    level: 100,
+    category: "Backend, Authentication & Validation",
+  },
+  {
+    name: "Better Auth",
+    icon: BetterAuthIcon,
+    color: "#ffffff",
+    level: 100,
+    category: "Backend, Authentication & Validation",
+  },
+
+  // --- Databases, ORMs & Infrastructure ---
+  {
+    name: "MongoDB",
+    icon: SiMongodb,
+    color: "#47A248",
+    level: 100,
+    category: "Databases, ORMs & Infrastructure",
+  },
+  {
+    name: "MongoDB Atlas",
+    icon: SiMongodb,
+    color: "#47A248",
+    level: 100,
+    category: "Databases, ORMs & Infrastructure",
+  },
+  {
+    name: "Mongoose",
+    icon: SiMongodb,
+    color: "#880000",
+    level: 100,
+    category: "Databases, ORMs & Infrastructure",
+  },
+  {
+    name: "PostgreSQL",
+    icon: SiPostgresql,
+    color: "#4169E1",
+    level: 100,
+    category: "Databases, ORMs & Infrastructure",
+  },
+  {
+    name: "Neon",
+    icon: NeonIcon,
+    color: "#00E599",
+    level: 100,
+    category: "Databases, ORMs & Infrastructure",
+  },
+  {
+    name: "Prisma",
+    icon: SiPrisma,
+    color: "#5A67D8",
+    level: 100,
+    category: "Databases, ORMs & Infrastructure",
   },
   {
     name: "Postman",
     icon: SiPostman,
     color: "#FF6C37",
     level: 100,
-    category: "Auth & Tools",
+    category: "Databases, ORMs & Infrastructure",
+  },
+  {
+    name: "npm",
+    icon: SiNpm,
+    color: "#CB3837",
+    level: 100,
+    category: "Databases, ORMs & Infrastructure",
   },
   {
     name: "Git",
     icon: FaGitAlt,
     color: "#F05032",
     level: 100,
-    category: "Auth & Tools",
+    category: "Databases, ORMs & Infrastructure",
   },
   {
     name: "GitHub",
     icon: SiGithub,
     color: "#ffffff",
     level: 100,
-    category: "Auth & Tools",
+    category: "Databases, ORMs & Infrastructure",
   },
 ];
 
 const CATEGORIES = [
   "All",
-  "Frontend",
-  "State & Data",
-  "Backend",
-  "Databases & ORM/ODM",
-  "Auth & Tools",
+  "Frontend & UI",
+  "State Management & Data Fetching",
+  "Backend, Authentication & Validation",
+  "Databases, ORMs & Infrastructure",
 ] as const;
 
 export default function Skills() {
