@@ -20,6 +20,7 @@ import {
   SiPrisma,
   SiPostgresql,
   SiPostman,
+  SiNodedotjs,
 } from "react-icons/si";
 
 import { FaReact, FaGitAlt } from "react-icons/fa";
@@ -30,7 +31,7 @@ interface Skill {
   icon: React.ElementType;
   color: string;
   level: number;
-  category: "Frontend" | "State & Data" | "Backend & DB" | "Auth & Tools";
+  category: "Frontend" | "State & Data" | "Backend" | "Databases & ORM/ODM" | "Auth & Tools";
 }
 
 /* =========================
@@ -102,7 +103,6 @@ const TanStackIcon = ({
 
 /* =========================
    Zustand Icon
-   Bear-style Zustand mark
 ========================= */
 
 const ZustandIcon = ({
@@ -265,46 +265,53 @@ const SKILLS: Skill[] = [
     category: "State & Data",
   },
   {
+    name: "Node.js",
+    icon: SiNodedotjs,
+    color: "#339933",
+    level: 100,
+    category: "Backend",
+  },
+  {
     name: "MongoDB",
     icon: SiMongodb,
     color: "#47A248",
     level: 100,
-    category: "Backend & DB",
+    category: "Databases & ORM/ODM",
   },
   {
     name: "MongoDB Atlas",
     icon: SiMongodb,
     color: "#47A248",
     level: 100,
-    category: "Backend & DB",
+    category: "Databases & ORM/ODM",
   },
   {
     name: "Mongoose",
     icon: SiMongodb,
     color: "#880000",
     level: 100,
-    category: "Backend & DB",
+    category: "Databases & ORM/ODM",
   },
   {
     name: "PostgreSQL",
     icon: SiPostgresql,
     color: "#4169E1",
     level: 100,
-    category: "Backend & DB",
+    category: "Databases & ORM/ODM",
   },
   {
     name: "Neon",
     icon: NeonIcon,
     color: "#00E599",
     level: 100,
-    category: "Backend & DB",
+    category: "Databases & ORM/ODM",
   },
   {
     name: "Prisma",
     icon: SiPrisma,
     color: "#5A67D8",
     level: 100,
-    category: "Backend & DB",
+    category: "Databases & ORM/ODM",
   },
   {
     name: "Sass",
@@ -354,7 +361,8 @@ const CATEGORIES = [
   "All",
   "Frontend",
   "State & Data",
-  "Backend & DB",
+  "Backend",
+  "Databases & ORM/ODM",
   "Auth & Tools",
 ] as const;
 
