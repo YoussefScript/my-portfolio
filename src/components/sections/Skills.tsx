@@ -22,6 +22,8 @@ import {
   SiPostman,
   SiNodedotjs,
   SiExpress,
+  SiNestjs,
+  SiVite,
   SiNpm,
 } from "react-icons/si";
 
@@ -183,34 +185,6 @@ const NeonIcon = ({
 const SKILLS: Skill[] = [
   // --- Frontend & UI ---
   {
-    name: "TypeScript",
-    icon: SiTypescript,
-    color: "#3178C6",
-    level: 100,
-    category: "Frontend & UI",
-  },
-  {
-    name: "JavaScript",
-    icon: SiJavascript,
-    color: "#F7DF1E",
-    level: 100,
-    category: "Frontend & UI",
-  },
-  {
-    name: "React",
-    icon: FaReact,
-    color: "#61DAFB",
-    level: 100,
-    category: "Frontend & UI",
-  },
-  {
-    name: "Next.js",
-    icon: SiNextdotjs,
-    color: "#ffffff",
-    level: 100,
-    category: "Frontend & UI",
-  },
-  {
     name: "HTML",
     icon: SiHtml5,
     color: "#E34F26",
@@ -225,9 +199,44 @@ const SKILLS: Skill[] = [
     category: "Frontend & UI",
   },
   {
+    name: "JavaScript",
+    icon: SiJavascript,
+    color: "#F7DF1E",
+    level: 100,
+    category: "Frontend & UI",
+  },
+  {
     name: "Sass",
     icon: SiSass,
     color: "#CC6699",
+    level: 100,
+    category: "Frontend & UI",
+  },
+  {
+    name: "TypeScript",
+    icon: SiTypescript,
+    color: "#3178C6",
+    level: 100,
+    category: "Frontend & UI",
+  },
+  {
+    name: "React",
+    icon: FaReact,
+    color: "#61DAFB",
+    level: 100,
+    category: "Frontend & UI",
+  },
+  {
+    name: "Vite",
+    icon: SiVite,
+    color: "#646CFF",
+    level: 100,
+    category: "Frontend & UI",
+  },
+  {
+    name: "Next.js",
+    icon: SiNextdotjs,
+    color: "#ffffff",
     level: 100,
     category: "Frontend & UI",
   },
@@ -248,20 +257,6 @@ const SKILLS: Skill[] = [
 
   // --- State Management & Data Fetching ---
   {
-    name: "TanStack Query",
-    icon: TanStackIcon,
-    color: "#FF4154",
-    level: 100,
-    category: "State Management & Data Fetching",
-  },
-  {
-    name: "Zustand",
-    icon: ZustandIcon,
-    color: "#F0EFEA",
-    level: 100,
-    category: "State Management & Data Fetching",
-  },
-  {
     name: "Redux Toolkit (RTK)",
     icon: SiRedux,
     color: "#764ABC",
@@ -275,8 +270,29 @@ const SKILLS: Skill[] = [
     level: 100,
     category: "State Management & Data Fetching",
   },
+  {
+    name: "TanStack Query",
+    icon: TanStackIcon,
+    color: "#FF4154",
+    level: 100,
+    category: "State Management & Data Fetching",
+  },
+  {
+    name: "Zustand",
+    icon: ZustandIcon,
+    color: "#F0EFEA",
+    level: 100,
+    category: "State Management & Data Fetching",
+  },
 
   // --- Backend, Authentication & Validation ---
+  {
+    name: "Zod",
+    icon: SiZod,
+    color: "#3068B7",
+    level: 100,
+    category: "Backend, Authentication & Validation",
+  },
   {
     name: "Node.js",
     icon: SiNodedotjs,
@@ -292,9 +308,9 @@ const SKILLS: Skill[] = [
     category: "Backend, Authentication & Validation",
   },
   {
-    name: "Zod",
-    icon: SiZod,
-    color: "#3068B7",
+    name: "NestJS",
+    icon: SiNestjs,
+    color: "#E0234E",
     level: 100,
     category: "Backend, Authentication & Validation",
   },
