@@ -45,28 +45,30 @@ export default function Navbar() {
 
   return (
     <nav className="w-full relative flex items-center justify-between">
-      {/* Left Avatar Logo (Replaced FaCode with GitHub Avatar) */}
-      <motion.div
-        initial={{ opacity: 0, x: -20 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.8 }}
-        className="flex items-center gap-4 cursor-pointer"
-        onClick={() => scrollTo("#home")}
-      >
-        <motion.div
-          className="w-14 h-14 rounded-full overflow-hidden flex items-center justify-center shadow-lg border-2"
-          style={{ borderColor: theme.primary }}
-          whileHover={{ scale: 1.1 }}
-        >
+      
+      {/* Left Side: Avatar + Name & Title */}
+      <div className="flex items-center gap-3">
+        <div className="w-12 h-12 rounded-full overflow-hidden flex-shrink-0 border border-white/20 flex items-center justify-center">
           <img 
             src="https://avatars.githubusercontent.com/u/250314469?s=400&u=8f1359ded64ae590bb3554a35656de42ba4af941&v=4" 
             alt="Youssef Emad Kamel" 
             className="w-full h-full object-cover"
           />
-        </motion.div>
-      </motion.div>
+        </div>
+        <div className="flex flex-col">
+          <span 
+            className="text-lg font-bold"
+            style={{ color: theme.primary || "#ec4899" }}
+          >
+            Youssef Emad Kamel
+          </span>
+          <span className="text-xs text-gray-400 font-medium">
+            Full-Stack Developer
+          </span>
+        </div>
+      </div>
 
-      {/* Desktop Navigation Links */}
+      {/* Right Side: Desktop Navigation Links */}
       <div className="hidden md:flex items-center bg-white/5 backdrop-blur-sm rounded-full border border-white/10 px-2 py-2 gap-1">
         {NAV_ITEMS.map((item, i) => {
           const Icon = item.icon;
@@ -93,7 +95,7 @@ export default function Navbar() {
         })}
       </div>
 
-      {/* Mobile Toggle */}
+      {/* Right Side: Mobile Toggle */}
       <div className="md:hidden">
         <motion.button
           onClick={() => setMobileOpen(!mobileOpen)}
@@ -123,7 +125,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -16, scale: 0.95 }}
             transition={{ duration: 0.2 }}
-            className="md:hidden absolute top-20 right-0 bg-black/95 backdrop-blur-xl border border-white/20 rounded-2xl p-3 min-w-[200px] z-50 shadow-2xl"
+            className="md:hidden absolute top-16 right-0 bg-black/95 backdrop-blur-xl border border-white/20 rounded-2xl p-3 min-w-[200px] z-50 shadow-2xl"
           >
             <div className="absolute -top-2 right-6 w-4 h-4 bg-black/95 border-l border-t border-white/20 rotate-45" />
             {NAV_ITEMS.map((item, i) => {
