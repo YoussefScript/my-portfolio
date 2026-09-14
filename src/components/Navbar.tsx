@@ -44,8 +44,36 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="w-full relative">
-      {/* Desktop */}
+    <nav className="w-full relative flex items-center justify-between">
+      {/* Left Side: Avatar + Name / Title */}
+      <motion.div
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8 }}
+        className="flex items-center gap-4 cursor-pointer"
+        onClick={() => scrollTo("#home")}
+      >
+        <motion.div
+          className="w-12 h-12 md:w-14 md:h-14 rounded-full overflow-hidden flex items-center justify-center shadow-lg border-2"
+          style={{ borderColor: theme.primary }}
+          whileHover={{ scale: 1.1 }}
+        >
+          <img 
+            src="https://avatars.githubusercontent.com/u/250314469?s=400&u=8f1359ded64ae590bb3554a35656de42ba4af941&v=4" 
+            alt="Youssef Emad Kamel" 
+            className="w-full h-full object-cover"
+          />
+        </motion.div>
+        <div className="flex flex-col">
+          <span className="text-lg md:text-xl font-bold bg-clip-text text-transparent"
+            style={{ backgroundImage: theme.secondaryText }}>
+            Youssef Emad Kamel
+          </span>
+          <span className="text-xs md:text-sm text-gray-400 font-medium">Full-Stack Developer</span>
+        </div>
+      </motion.div>
+
+      {/* Desktop Navigation Links */}
       <div className="hidden md:flex items-center bg-white/5 backdrop-blur-sm rounded-full border border-white/10 px-2 py-2 gap-1">
         {NAV_ITEMS.map((item, i) => {
           const Icon = item.icon;
@@ -65,14 +93,7 @@ export default function Navbar() {
               whileHover={{ scale: 1.05, color: "#fff" }}
               whileTap={{ scale: 0.95 }}
             >
-              {/* GitHub Avatar used instead of Lucide Icon */}
-              <div className="w-5 h-5 rounded-full overflow-hidden flex-shrink-0 border border-white/30">
-                <img 
-                  src="https://avatars.githubusercontent.com/u/250314469?s=400&u=8f1359ded64ae590bb3554a35656de42ba4af941&v=4" 
-                  alt="Youssef" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
+              <Icon size={15} />
               <span>{item.name}</span>
             </motion.button>
           );
@@ -109,10 +130,11 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -16, scale: 0.95 }}
             transition={{ duration: 0.2 }}
-            className="md:hidden absolute top-16 right-0 bg-black/95 backdrop-blur-xl border border-white/20 rounded-2xl p-3 min-w-[200px] z-50 shadow-2xl"
+            className="md:hidden absolute top-20 right-0 bg-black/95 backdrop-blur-xl border border-white/20 rounded-2xl p-3 min-w-[200px] z-50 shadow-2xl"
           >
             <div className="absolute -top-2 right-6 w-4 h-4 bg-black/95 border-l border-t border-white/20 rotate-45" />
             {NAV_ITEMS.map((item, i) => {
+              const Icon = item.icon;
               const isActive = active === item.href.substring(1);
               return (
                 <motion.button
@@ -128,13 +150,7 @@ export default function Navbar() {
                   }
                   whileHover={{ x: 4 }}
                 >
-                  <div className="w-5 h-5 rounded-full overflow-hidden flex-shrink-0 border border-white/30">
-                    <img 
-                      src="https://avatars.githubusercontent.com/u/250314469?s=400&u=8f1359ded64ae590bb3554a35656de42ba4af941&v=4" 
-                      alt="Youssef" 
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
+                  <Icon size={17} />
                   <span>{item.name}</span>
                 </motion.button>
               );
