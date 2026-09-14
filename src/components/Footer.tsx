@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FaGithub, FaEnvelope, FaCode, FaWhatsapp } from "react-icons/fa";
+import { FaGithub, FaEnvelope, FaWhatsapp } from "react-icons/fa";
 import { useTheme } from "@/context/ThemeContext";
 
 export default function Footer() {
@@ -27,11 +27,15 @@ export default function Footer() {
             className="flex items-center gap-4"
           >
             <motion.div
-              className="w-14 h-14 rounded-full flex items-center justify-center shadow-lg"
-              style={{ backgroundImage: theme.primary }}
+              className="w-14 h-14 rounded-full overflow-hidden flex items-center justify-center shadow-lg border-2"
+              style={{ borderColor: theme.primary }}
               whileHover={{ scale: 1.1 }}
             >
-              <FaCode className="text-white text-2xl" />
+              <img 
+                src="https://avatars.githubusercontent.com/u/250314469?s=400&u=8f1359ded64ae590bb3554a35656de42ba4af941&v=4" 
+                alt="Youssef Emad Kamel" 
+                className="w-full h-full object-cover"
+              />
             </motion.div>
             <div className="flex flex-col">
               <span className="text-xl md:text-2xl font-bold bg-clip-text text-transparent"
