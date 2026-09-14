@@ -13,9 +13,6 @@ import {
 } from "lucide-react";
 import { useTheme } from "@/context/ThemeContext";
 
-const AVATAR_URL =
-  "https://avatars.githubusercontent.com/u/250314469?s=400&u=8f1359ded64ae590bb3554a35656de42ba4af941&v=4";
-
 const NAV_ITEMS = [
   { name: "Home", href: "#home", icon: Home },
   { name: "About", href: "#about", icon: User },
@@ -29,6 +26,7 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [active, setActive] = useState("home");
 
+  // Detect active section while scrolling
   useEffect(() => {
     const onScroll = () => {
       const scrollY = window.scrollY + 120;
@@ -47,14 +45,19 @@ export default function Navbar() {
     window.addEventListener("scroll", onScroll);
     onScroll();
 
-    return () => window.removeEventListener("scroll", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+    };
   }, []);
 
+  // Close mobile menu when clicking outside navbar
   useEffect(() => {
     const onClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+
       if (
         mobileOpen &&
-        !(e.target as HTMLElement).closest("nav")
+        !target.closest("nav")
       ) {
         setMobileOpen(false);
       }
@@ -68,64 +71,27 @@ export default function Navbar() {
   }, [mobileOpen]);
 
   const scrollTo = (href: string) => {
-    document
-      .getElementById(href.substring(1))
-      ?.scrollIntoView({
-        behavior: "smooth",
-      });
+    const id = href.substring(1);
+    const element = document.getElementById(id);
+
+    element?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
 
     setMobileOpen(false);
   };
 
   return (
-    <nav className="w-full relative flex items-center justify-between">
+    <nav className="w-full relative">
       {/* =========================
-          LEFT SIDE - PROFILE
-      ========================== */}
-      <motion.button
-        onClick={() => scrollTo("#home")}
-        className="flex items-center gap-3 cursor-pointer text-left"
-        initial={{ opacity: 0, x: -20 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.5 }}
-        whileHover={{ scale: 1.02 }}
-      >
-        {/* Avatar */}
-        <div className="w-14 h-14 rounded-full overflow-hidden shrink-0">
-          <img
-            src={AVATAR_URL}
-            alt="Youssef Emad Kamel"
-            className="w-full h-full object-cover"
-          />
-        </div>
-
-        {/* Name + Title */}
-        <div className="flex flex-col">
-          <span
-            className="text-xl md:text-2xl font-bold leading-tight"
-            style={{
-              backgroundImage: theme.primary,
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              backgroundClip: "text",
-            }}
-          >
-            Youssef Emad Kamel
-          </span>
-
-          <span className="text-sm md:text-base text-white/60 font-medium">
-            Full-Stack Developer
-          </span>
-        </div>
-      </motion.button>
-
-      {/* =========================
-          RIGHT SIDE - DESKTOP NAV
+          DESKTOP NAVIGATION
       ========================== */}
       <div className="hidden md:flex items-center bg-white/5 backdrop-blur-sm rounded-full border border-white/10 px-2 py-2 gap-1">
         {NAV_ITEMS.map((item, i) => {
           const Icon = item.icon;
-          const isActive = active === item.href.substring(1);
+          const isActive =
+            active === item.href.substring(1);
 
           return (
             <motion.button
@@ -133,17 +99,17 @@ export default function Navbar() {
               onClick={() => scrollTo(item.href)}
               initial={{
                 opacity: 0,
-                y: -15,
+                y: -20,
               }}
               animate={{
                 opacity: 1,
                 y: 0,
               }}
               transition={{
-                duration: 0.4,
-                delay: 0.08 * i,
+                duration: 0.5,
+                delay: 0.1 * i,
               }}
-              className="relative flex items-center gap-2 px-4 py-2.5 rounded-full font-medium text-sm cursor-pointer transition-all duration-300"
+              className="relative flex items-center gap-2 px-4 py-2 rounded-full font-medium text-sm transition-all duration-300 cursor-pointer"
               style={
                 isActive
                   ? {
@@ -155,14 +121,14 @@ export default function Navbar() {
                     }
               }
               whileHover={{
-                scale: 1.04,
+                scale: 1.05,
                 color: "#fff",
               }}
               whileTap={{
                 scale: 0.95,
               }}
             >
-              <Icon size={16} />
+              <Icon size={15} />
               <span>{item.name}</span>
             </motion.button>
           );
@@ -170,16 +136,22 @@ export default function Navbar() {
       </div>
 
       {/* =========================
-          MOBILE MENU BUTTON
+          MOBILE TOGGLE
       ========================== */}
       <div className="md:hidden">
         <motion.button
           onClick={() => setMobileOpen(!mobileOpen)}
           className="p-3 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white cursor-pointer"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
+          whileHover={{
+            scale: 1.05,
+          }}
+          whileTap={{
+            scale: 0.95,
+          }}
           aria-label={
-            mobileOpen ? "Close menu" : "Open menu"
+            mobileOpen
+              ? "Close menu"
+              : "Open menu"
           }
         >
           <AnimatePresence mode="wait">
@@ -197,6 +169,9 @@ export default function Navbar() {
                 exit={{
                   rotate: 90,
                   opacity: 0,
+                }}
+                transition={{
+                  duration: 0.2,
                 }}
               >
                 <X size={22} />
@@ -216,6 +191,9 @@ export default function Navbar() {
                   rotate: -90,
                   opacity: 0,
                 }}
+                transition={{
+                  duration: 0.2,
+                }}
               >
                 <Menu size={22} />
               </motion.div>
@@ -232,7 +210,7 @@ export default function Navbar() {
           <motion.div
             initial={{
               opacity: 0,
-              y: -15,
+              y: -16,
               scale: 0.95,
             }}
             animate={{
@@ -242,17 +220,21 @@ export default function Navbar() {
             }}
             exit={{
               opacity: 0,
-              y: -15,
+              y: -16,
               scale: 0.95,
             }}
-            transition={{ duration: 0.2 }}
-            className="md:hidden absolute top-16 right-0 w-56 bg-black/95 backdrop-blur-xl border border-white/20 rounded-2xl p-3 z-50 shadow-2xl"
+            transition={{
+              duration: 0.2,
+            }}
+            className="md:hidden absolute top-16 right-0 bg-black/95 backdrop-blur-xl border border-white/20 rounded-2xl p-3 min-w-[200px] z-50 shadow-2xl"
           >
+            {/* Dropdown Arrow */}
             <div className="absolute -top-2 right-6 w-4 h-4 bg-black/95 border-l border-t border-white/20 rotate-45" />
 
             {NAV_ITEMS.map((item, i) => {
               const Icon = item.icon;
-              const isActive = active === item.href.substring(1);
+              const isActive =
+                active === item.href.substring(1);
 
               return (
                 <motion.button
@@ -260,7 +242,7 @@ export default function Navbar() {
                   onClick={() => scrollTo(item.href)}
                   initial={{
                     opacity: 0,
-                    x: -15,
+                    x: -20,
                   }}
                   animate={{
                     opacity: 1,
@@ -268,9 +250,9 @@ export default function Navbar() {
                   }}
                   transition={{
                     duration: 0.2,
-                    delay: i * 0.05,
+                    delay: 0.05 * i,
                   }}
-                  className="w-full flex items-center gap-3 py-3 px-4 rounded-xl font-medium text-sm cursor-pointer"
+                  className="w-full flex items-center gap-3 py-3 px-4 rounded-xl font-medium text-sm transition-all duration-300 cursor-pointer"
                   style={
                     isActive
                       ? {
