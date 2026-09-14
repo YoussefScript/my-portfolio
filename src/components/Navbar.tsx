@@ -13,9 +13,6 @@ import {
 } from "lucide-react";
 import { useTheme } from "@/context/ThemeContext";
 
-const AVATAR_URL =
-  "https://avatars.githubusercontent.com/u/250314469?s=400&u=8f1359ded64ae590bb3554a35656de42ba4af941&v=4";
-
 const NAV_ITEMS = [
   { name: "Home", href: "#home", icon: Home },
   { name: "About", href: "#about", icon: User },
@@ -58,7 +55,10 @@ export default function Navbar() {
     const onClick = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
 
-      if (mobileOpen && !target.closest("nav")) {
+      if (
+        mobileOpen &&
+        !target.closest("nav")
+      ) {
         setMobileOpen(false);
       }
     };
@@ -83,39 +83,15 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="w-full relative flex items-center justify-between px-4 py-3">
-      {/* =========================
-          BRAND / AVATAR LOGO (Replaces </>)
-      ========================== */}
-      <motion.a
-        href="#home"
-        onClick={(e) => {
-          e.preventDefault();
-          scrollTo("#home");
-        }}
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.4 }}
-        className="flex items-center gap-3 cursor-pointer group"
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-      >
-        <div className="relative p-0.5 rounded-full bg-gradient-to-r from-white/20 to-white/5 group-hover:from-white/40 group-hover:to-white/20 transition-all duration-300">
-          <img
-            src={AVATAR_URL}
-            alt="Profile Avatar"
-            className="w-10 h-10 rounded-full object-cover border border-white/20 shadow-md group-hover:border-white/50 transition-all duration-300"
-          />
-        </div>
-      </motion.a>
-
+    <nav className="w-full relative">
       {/* =========================
           DESKTOP NAVIGATION
       ========================== */}
       <div className="hidden md:flex items-center bg-white/5 backdrop-blur-sm rounded-full border border-white/10 px-2 py-2 gap-1">
         {NAV_ITEMS.map((item, i) => {
           const Icon = item.icon;
-          const isActive = active === item.href.substring(1);
+          const isActive =
+            active === item.href.substring(1);
 
           return (
             <motion.button
@@ -172,7 +148,11 @@ export default function Navbar() {
           whileTap={{
             scale: 0.95,
           }}
-          aria-label={mobileOpen ? "Close menu" : "Open menu"}
+          aria-label={
+            mobileOpen
+              ? "Close menu"
+              : "Open menu"
+          }
         >
           <AnimatePresence mode="wait">
             {mobileOpen ? (
@@ -246,14 +226,15 @@ export default function Navbar() {
             transition={{
               duration: 0.2,
             }}
-            className="md:hidden absolute top-16 right-4 bg-black/95 backdrop-blur-xl border border-white/20 rounded-2xl p-3 min-w-[200px] z-50 shadow-2xl"
+            className="md:hidden absolute top-16 right-0 bg-black/95 backdrop-blur-xl border border-white/20 rounded-2xl p-3 min-w-[200px] z-50 shadow-2xl"
           >
             {/* Dropdown Arrow */}
             <div className="absolute -top-2 right-6 w-4 h-4 bg-black/95 border-l border-t border-white/20 rotate-45" />
 
             {NAV_ITEMS.map((item, i) => {
               const Icon = item.icon;
-              const isActive = active === item.href.substring(1);
+              const isActive =
+                active === item.href.substring(1);
 
               return (
                 <motion.button
