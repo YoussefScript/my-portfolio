@@ -45,7 +45,7 @@ export default function Navbar() {
 
   return (
     <nav className="w-full relative flex items-center justify-between">
-      {/* Left Side: Avatar + Name / Title */}
+      {/* Left Avatar Logo (Replaced FaCode with GitHub Avatar) */}
       <motion.div
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
@@ -54,7 +54,7 @@ export default function Navbar() {
         onClick={() => scrollTo("#home")}
       >
         <motion.div
-          className="w-12 h-12 md:w-14 md:h-14 rounded-full overflow-hidden flex items-center justify-center shadow-lg border-2"
+          className="w-14 h-14 rounded-full overflow-hidden flex items-center justify-center shadow-lg border-2"
           style={{ borderColor: theme.primary }}
           whileHover={{ scale: 1.1 }}
         >
@@ -64,13 +64,6 @@ export default function Navbar() {
             className="w-full h-full object-cover"
           />
         </motion.div>
-        <div className="flex flex-col">
-          <span className="text-lg md:text-xl font-bold bg-clip-text text-transparent"
-            style={{ backgroundImage: theme.secondaryText }}>
-            Youssef Emad Kamel
-          </span>
-          <span className="text-xs md:text-sm text-gray-400 font-medium">Full-Stack Developer</span>
-        </div>
       </motion.div>
 
       {/* Desktop Navigation Links */}
