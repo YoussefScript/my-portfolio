@@ -65,7 +65,14 @@ export default function Navbar() {
               whileHover={{ scale: 1.05, color: "#fff" }}
               whileTap={{ scale: 0.95 }}
             >
-              <Icon size={15} />
+              {/* GitHub Avatar used instead of Lucide Icon */}
+              <div className="w-5 h-5 rounded-full overflow-hidden flex-shrink-0 border border-white/30">
+                <img 
+                  src="https://avatars.githubusercontent.com/u/250314469?s=400&u=8f1359ded64ae590bb3554a35656de42ba4af941&v=4" 
+                  alt="Youssef" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
               <span>{item.name}</span>
             </motion.button>
           );
@@ -106,7 +113,6 @@ export default function Navbar() {
           >
             <div className="absolute -top-2 right-6 w-4 h-4 bg-black/95 border-l border-t border-white/20 rotate-45" />
             {NAV_ITEMS.map((item, i) => {
-              const Icon = item.icon;
               const isActive = active === item.href.substring(1);
               return (
                 <motion.button
@@ -122,7 +128,13 @@ export default function Navbar() {
                   }
                   whileHover={{ x: 4 }}
                 >
-                  <Icon size={17} />
+                  <div className="w-5 h-5 rounded-full overflow-hidden flex-shrink-0 border border-white/30">
+                    <img 
+                      src="https://avatars.githubusercontent.com/u/250314469?s=400&u=8f1359ded64ae590bb3554a35656de42ba4af941&v=4" 
+                      alt="Youssef" 
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
                   <span>{item.name}</span>
                 </motion.button>
               );
