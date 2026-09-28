@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FaGithub, FaEnvelope, FaWhatsapp } from "react-icons/fa";
+import { FaGithub, FaEnvelope, FaWhatsapp, FaLinkedin } from "react-icons/fa";
 import { useTheme } from "@/context/ThemeContext";
 
 export default function Footer() {
@@ -9,6 +9,7 @@ export default function Footer() {
 
   const socials = [
     { icon: FaGithub, href: "https://github.com/YoussefScript", hoverBg: "rgba(255,255,255,0.2)", hoverText: "#fff" },
+    { icon: FaLinkedin, href: "https://www.linkedin.com/in/youssefemadkamel/", hoverBg: "rgba(10,102,194,0.15)", hoverText: "#0a66c2" },
     { icon: FaWhatsapp, href: "https://wa.me/201553356036", hoverBg: "rgba(37,211,102,0.15)", hoverText: "#25d366" },
     { icon: FaEnvelope, href: "mailto:youssef1362009kamel@gmail.com", hoverBg: "rgba(74,222,128,0.15)", hoverText: "#4ade80" },
   ];
