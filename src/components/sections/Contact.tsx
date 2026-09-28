@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { FaGithub, FaEnvelope, FaWhatsapp } from "react-icons/fa";
+import { FaGithub, FaEnvelope, FaWhatsapp, FaLinkedin } from "react-icons/fa";
 import { useTheme } from "@/context/ThemeContext";
 
 const CONTACT_INFO = [
@@ -17,6 +17,12 @@ const CONTACT_INFO = [
     label: "WhatsApp",
     value: "+201553356036",
     href: "https://wa.me/201553356036",
+  },
+  {
+    icon: FaLinkedin,
+    label: "LinkedIn",
+    value: "Youssef Emad Kamel",
+    href: "https://www.linkedin.com/in/youssefemadkamel/",
   },
   {
     icon: FaGithub,
